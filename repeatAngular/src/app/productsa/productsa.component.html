@@ -1,0 +1,112 @@
+<==<button class="lb" (click)='home()'     routerLink="login">Back</button>
+<button class="lb" (click)='usertable()'     routerLink="user">Show Users</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="lb" (click)='home()'     routerLink="home">Logout</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="bl" (click)="addproduct()" routerLink="addproduct">addproduct</button>
+
+
+
+
+<form class="d-flex"   #SearchForm="ngForm" (ngSubmit)="search(SearchForm.value.pName)">
+    <input class="form-control me-sm-2" type="text" ngModel name="pName" #pName="ngModel" placeholder="Search">
+    <button class="btn btn-secondary my-2 my-sm-0"
+      type="submit"  >Search</button>
+      </form>
+<div class="row md-1" style="margin-top: 4px" >
+    <div class="col-md-3" *ngFor="let product of show">
+        <div class="card" style="width:250px; height: 85%;"> <img align="center" style="width:100%; height: 50%;"
+                class="card-img-top" [src]="product.pImg" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-text" align="center"><b>{{product.pId}}</b></p>
+                <!-- <p class="card-text">{{product.pCId}}</p> -->
+               <h3> <p class="card-text" align="left">{{product.pName}} </p></h3>
+                <p class="card-text" align="left">₹{{product.pPrice}}</p>
+                
+                <p class="card-text" align="left">{{product.pDescription}}</p>
+                <p class="card-text" align="left">{{product.pWeight}}gms</p>
+                <button   (click)="payment()" routerLink="payment">buynow</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <button >add to cart</button>
+           </div>
+        </div>
+    </div>
+  </div>
+
+
+<table class="table table-bordered table-hover table-condensed table-stripped">
+
+
+
+   
+    <thead class="table-primary">
+        <tr class="bg-info">
+            <th>img</th>
+            <th>pId</th>
+            <th>pCId</th>
+            <th>PName</th>
+            <th>pPrice</th>
+            <th>pDescriptin</th>
+            <th>pWeight</th>
+            <th>Action</th>
+            
+            
+     </tr>
+    </thead>
+    <tbody  style="text-align:center">
+    <tr *ngFor="let fd of products">
+        <!-- <!-- <td><input type="radio">{{fd.uId}}</td>  -->
+
+        <td><div class="card" style="width:250px; height: 85%;"> <img align="center" style="width:100%; height: 50%;"
+            class="card-img-top" [src]="fd.pImg" alt="Card image cap">
+        <div class="card-body"></div></div></td>
+
+        <td>{{fd.pId}}</td>
+        <td>{{fd.pCId}}</td>
+        <td>{{fd.pName}}</td>
+        <td>{{fd.pPrice}}</td>
+        <td>{{fd.pDescription}}</td>
+        <td>{{fd.pWeight}}</td>
+        <td><button class="lb" data-toggle="modal" data-target="#mymodal" (click)="update(fd)">update</button>&nbsp;&nbsp;
+
+            <button class="lb" (click)="delete(fd.pId)">delete</button></td>
+        
+   </tr>
+</tbody>
+</table>
+
+
+
+<div class="modal" id="mymodal" role="dialog"> 
+    <div class="modal-content">
+        <div class="container">
+            <form #add="ngForm" (ngSubmit) = "editproduct(add.value)" >
+
+                pid<input type="text" ngModel name="pId" [(ngModel)]="updatebyid.pId" ><br>
+                pid<input type="text" ngModel name="pCId" [(ngModel)]="updatebyid.pCId" ><br>
+                enter name:<input type="text" ngModel name="pName" [(ngModel)]="updatebyid.pName" ><br>
+                pImg<input type="text" ngModel name="pImg" [(ngModel)]="updatebyid.pImg" ><br>
+                pPrice<input type="text" ngModel name="pPrice" [(ngModel)]="updatebyid.pPrice" ><br>
+
+
+
+
+                <!-- enter experience:<input type="text" ngModel name="experience" [(ngModel)]="updatebyid.experience" ><br>
+                pDescription<input type="text" ngModel name="pDescription" [(ngModel)]="updatebyid.pDescription" ><br> -->
+
+
+
+
+                pWeight<input type="text" ngModel name="pWeight" [(ngModel)]="updatebyid.pWeight" ><br>
+            
+                <button>submit</button>
+               
+                
+                   
+            
+                
+                
+            </form>
+       
+
+        </div>
+    </div>
+</div>

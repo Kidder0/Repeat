@@ -1,0 +1,60 @@
+.main1{
+    margin-left: 500px;
+    margin-top: 18px;
+}
+
+.title{
+    margin-left: 158px;
+}
+
+.main{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    width: 500px;
+    margin: 250 px;
+    border-radius: 4px;
+    box-shadow: 10px 10px 5px;
+   
+
+}
+
+form{
+    margin: 35px;
+}
+
+/* label {
+    display: inline-block;
+    width:100px;
+    text-align: right;
+} */
+
+label{
+    display: block;
+    float: left;
+    width : 120px;   
+    margin: 2px 0px; 
+  }
+
+.add_button{
+    border: none;
+    background-color: black;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0px 5px;
+    margin-left: 105px;
+    margin-top: 8px;
+}
+
+
+input{
+    margin: 2px 0px;
+    
+}
+
+.add_button:hover{
+    background-color: #fff;
+    color: black;
+    border: 2px solid black;
+}

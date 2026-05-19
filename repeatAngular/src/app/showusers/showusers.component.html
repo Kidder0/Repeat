@@ -1,0 +1,25 @@
+<table class="table table-bordered table-hover table-condensed table-stripped">
+    <thead class="table-primary">
+        <tr class="bg-info">
+            <th>id</th>
+            <th>name</th>
+            <th>password</th>
+            <th>address</th>
+            <th>email</th>
+            <th>usertype</th>
+            
+            
+     </tr>
+    </thead>
+    <tbody  style="text-align:center">
+    <tr *ngFor="let fd of details">
+        <td><input type="radio">{{fd.uId}}</td>
+        <td>{{fd.uName}}</td>
+        <td>{{fd.password}}</td>
+        <td>{{fd.uAddress}}</td>
+        <td>{{fd.email}}</td>
+        <td>{{fd.uType}}</td>
+   </tr>
+</tbody>
+</table>
+<!-- <button class="btn btn-info" (click)="getno()">get details</button> -->

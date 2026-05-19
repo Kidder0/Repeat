@@ -1,0 +1,34 @@
+
+
+<div class="main1">
+    <h1 class="title">Add Item</h1>
+<div class="main">
+
+    
+    
+<form #upForm="ngForm"(ngSubmit)="addProduct(upForm.value)">
+    
+    <label for="pCId">Category Id</label>
+    
+    <input type="text" ngModel name="pCId" #pCId=ngModel ><br/>
+
+<label for="pName">Product Name</label>
+    <input type="text" align="middle" ngModel name="pName" #pName=ngModel ><br/>
+
+    <label for="pDescription">Description</label>
+    <input type="text" ngModel name="pDescription" #pDescription=ngModel ><br/>
+
+
+    <label for="pPrice">Price</label>
+     <input type="text" ngModel name="pPrice" #pPrice=ngModel ><br/>
+
+     <label for="pImg">Product Image</label>
+    <input type="text" ngModel name="pImg" #PImg=ngModel  ><br/>
+
+    <label for="pWeight">Product Weight</label>
+    <input type="text" ngModel name="pWeight" #pWeight=ngModel ><br/>
+    
+    <button class="add_button" [disabled]="!upForm.valid" (click)="ok()" >Add Product</button>
+</form>
+</div>
+</div>

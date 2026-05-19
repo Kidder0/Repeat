@@ -1,0 +1,136 @@
+
+.main{
+    font-family: "Trirong", serif;
+    background-color: #fff;
+    border: 1px solid black;
+    margin-bottom: 1px;
+}
+.Cont{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.login_button{
+    border-radius: 4px;
+    color: #fff;
+
+    background-color: black;
+    border: transparent;
+    padding: 10px 25px;
+    margin: auto;
+    margin-right: -275px;
+
+
+}
+
+
+.logo{
+    border-radius: 50%;
+}
+
+
+.title{
+    margin-left: 30px;
+}
+
+.registe_button{
+    border-radius: 4px;
+    color: #fff;
+
+    background-color: black;
+    border: transparent;
+    padding: 10px 25px;
+    margin: auto;
+    margin-right: -550px;
+    
+
+}
+
+
+.login_button:hover{
+    background-color: #fff;
+    color: black;
+}
+
+.registe_button:hover{
+    background-color:#fff;
+    color: black;
+}
+
+
+#imagec{
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#imgc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 30px;
+    border-radius: 6px;
+    box-shadow: 10px 5px 10px;
+}
+
+#buttonc{
+    padding: 0px 20px;
+    height: 28px;
+    background-color: black;
+}
+
+/* img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 30px;
+    border-radius: 6px;
+
+} */
+
+/* .container4{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+} */
+
+
+.te1{
+
+    margin: 0px 30px;
+}
+
+.SearchBar{
+    position:absolute;
+    top:355px;
+    left:500px
+
+}
+
+.SearchBar input{
+   height: 100px;
+   width:100px;
+   
+   border: 1px solid black;
+}
+.lb{
+    border-radius: 4px;
+    border-color: transparent;
+    color: #fff;
+    background-color: orange;
+    margin-right: 10px;
+    padding:8px 25px;
+
+}
+
+
+.lb:hover{
+    background-color: black;
+}
+

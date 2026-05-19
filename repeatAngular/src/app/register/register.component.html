@@ -1,0 +1,54 @@
+<==<button class="lb" (click)='back()'     routerLink="home">Back</button>
+
+
+<div class="main1"> 
+
+    <h1 class="title"> USER REGISTRATION FORM</h1>
+
+    <div class="main">
+
+        <form #userForm="ngForm" (ngSubmit)="registrationok(userForm.value)" novalidate align="center">
+
+
+            <label for="uName">Login Id</label>
+            <input type="text" ngModel name="uName" #uName="ngModel" required minlength="3" maxlength="15"
+                placeholder="enter  u Name"><br><br>
+            <div *ngIf="uName.errors?.['required'] && uName.touched">please enter user id</div>
+            <div *ngIf="uName.errors?.['minlength'] && uName.touched" >Enter atleast 3 characters</div>
+            <div *ngIf="uName.errors?.['maxlength'] && uName.touched" >maximum length 15</div>
+            <label for="password">Password</label>
+            <input type="password" ngModel name="password" #password="ngModel" required minlength="4" maxlength="6"
+                placeholder="enter password"><br><br>
+            <div *ngIf="password.errors?.['required'] && password.touched">please enter password</div>
+            <div *ngIf="password.errors?.['minlength'] && password.touched">Enter atleast 6 characters</div>
+
+
+            <label for="uAddress">Address</label>
+            <input type="text" ngModel name="uAddress" #uAddress="ngModel" required
+                placeholder="please enter address"><br><br>
+            <label for="email">Email</label>
+            <input type="email" ngModel name="email" #email="ngModel" required minlength="12" maxlength="50"
+                placeholder="please enter emailid"><br><br>
+            <div *ngIf="email.errors?.['required'] && email.touched">please enter emailId</div>
+            <div *ngIf="email.errors?.['minlength'] && email.touched">Enter atleast 12 characters</div>
+            <label for="PhoneNo">Mobile No</label>
+            <input type="text" ngModel name="uPhoneNo" #uPhoneNo="ngModel" required minlength="10"   maxlength="10"
+                placeholder="please enter your phoneno"><br><br>
+            <div *ngIf="uPhoneNo.errors?.['required'] && uPhoneNo.touched">please enter phone number</div>
+            <div *ngIf="password.errors?.['minlength'] && password.touched">you have enter 10 values</div>
+            <div *ngIf="password.errors?.['maxlength'] && password.touched">you have enter 10 values</div>
+
+            <label for="uType">user type</label>
+            <select ngModel name="uType" #uType="ngModel" required aria-placeholder="please select user type">
+
+                <option value="" disabled selected hidden> please select user type</option>
+                <option>user</option>
+                <option>admin</option>
+                <!-- <option>others</option> -->
+
+            </select>
+            <button class="register_button" [disabled]="userForm.invalid"   (click)="ok()"    >REGISTER</button>
+        </form>
+    </div>
+</div>
+

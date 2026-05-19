@@ -1,0 +1,29 @@
+.lb{
+    border-radius: 4px;
+    border-color: transparent;
+    color: #fff;
+    background-color: orange;
+    margin-right: 10px;
+    padding:8px 25px;
+
+}
+
+
+.lb:hover{
+    background-color: black;
+}
+
+.bl{
+    border-radius: 4px;
+    border-color: transparent;
+    color: #fff;
+    background-color: orange;
+    margin-right: 10px;
+    padding:8px 25px;
+
+}
+
+
+.bl:hover{
+    background-color: black;
+}

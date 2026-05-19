@@ -1,0 +1,45 @@
+
+
+
+<==<button class="lb" (click)='back()'     routerLink="home">Back</button>
+<div class="Cont-">
+    <h1 class="title">LOGIN FORM</h1>
+
+<div class="Cont">
+   
+<form #loginForm="ngForm"  (ngSubmit)="loginSubmit2(loginForm.value)" novalidate>
+    <!-- <label for="uName">User Name</label>
+    <input type="text"  ngModel name="uName" #uName="ngModel" required
+       maxlength="12"><br><br>
+       <label for="password">Password</label>
+    <input type="password"  ngModel name="password" #password="ngModel" required
+        maxlength="12"><br><br> -->
+
+        <label for="uName">Login  Id </label>
+        <input type="text" ngModel name="uName" #uName="ngModel" required maxlength="12"><br><br>
+        <div *ngIf="uName.errors?.['required'] && uName.touched">Please Enter Login Id</div>
+        <div *ngIf="uName.errors?.['minlength'] && uName.touched">Enter Min 6 Chars</div>
+        <label for="password">password  </label>
+        <input type="password" ngModel name="password" #password="ngModel" required maxlength="12"><br><br>
+        <div *ngIf="password.errors?.['required'] && password.touched">Please Enter Password</div>
+<div *ngIf="password.errors?.['minlength'] && password.touched">Enter Min 6 Chars</div>
+        <label for="userType">User Type  </label>
+        <input type="text"  ngModel name="uType" #uType="ngModel" required><br><br>
+
+        <!-- <label for="uType">User Type</label>
+    <input type="text" class="formcontrol" ngModel name="uType" #uType="ngModel"><br/> -->
+
+    <button class='login_button' [disabled]=loginForm.invalid>Login</button>
+    <button class='register_button' (click)="home()"    routerLink="register" >create account</button>
+    
+</form>
+
+
+</div>
+</div>
+
+
+
+
+
+

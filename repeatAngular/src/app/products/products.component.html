@@ -1,0 +1,62 @@
+
+
+
+
+
+<h3 align="center"><u>List Of Products</u></h3> <br />
+
+<div class="container">
+    <!-- <button (click)="addproduct()" routerLink="addproduct">addproduct</button> -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="lb"   (click)="c()" routerLink="cart">cart</button>
+    <form class="d-flex"   #SearchForm="ngForm" (ngSubmit)="search(SearchForm.value.pName)">
+        <input class="form-control me-sm-2" type="text" ngModel name="pName" #pName="ngModel" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0"
+          type="submit"  >Search</button>
+          </form>
+
+
+    <button class="button" (click)="logout()" routerLink="home" style="margin-right:1px" >Logout</button>
+<div class="row md-1" style="margin-top: 4px" >
+  <div class="col-md-3" *ngFor="let product of show">
+      <div class="card" style="width:250px; height: 85%;"> <img align="center" style="width:100%; height: 50%;"
+              class="card-img-top" [src]="product.pImg" alt="Card image cap">
+          <div class="card-body">
+              <p class="card-text" align="center"><b>{{product.pId}}</b></p>
+              <!-- <p class="card-text">{{product.pCId}}</p> -->
+             <h3> <p class="card-text" align="left">{{product.pName}} </p></h3>
+              <p class="card-text" align="left">₹{{product.pPrice}}</p>
+              
+              <p class="card-text" align="left">{{product.pDescription}}</p>
+              <p class="card-text" align="left">{{product.pWeight}}gms</p>
+              <button  class="lb" (click)="payment()" routerLink="payment">buynow</button>
+              
+             <button class="lb" >add to cart</button>
+         </div>
+      </div>
+  </div>
+</div>
+
+    <div class="row md-1" style="margin-top: 4px" >
+        <div class="col-md-3" *ngFor="let product of products">
+            <div class="card" style="width:250px; height: 85%;"> <img align="center" style="width:100%; height: 50%;"
+                    class="card-img-top" [src]="product.pImg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text" align="center"><b>{{product.pId}}</b></p>
+                    <!-- <p class="card-text">{{product.pCId}}</p> -->
+                   <h3> <p class="card-text" align="left">{{product.pName}} </p></h3>
+                    <p class="card-text" align="left">₹{{product.pPrice}}</p>
+                    
+                    <p class="card-text" align="left">{{product.pDescription}}</p>
+                    <p class="card-text" align="left">{{product.pWeight}}gms</p>
+                    <button  class="lb" (click)="payment()" routerLink="payment">buynow</button>
+                   <button class="lb"(click)="addToCart(product)">add to cart</button>
+               </div>
+            </div>
+        </div>
+    </div> 
+    </div>
+    
+
+
+
